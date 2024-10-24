@@ -8,24 +8,11 @@ from rest_framework.permissions import IsAuthenticated
 class ProductView(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    def get_permissions(self):
-        permission_classes = []
-
-        if self.request.method != "GET":
-            permission_classes = [IsAuthenticated]
-        
-        return [permission() for permission in permission_classes]
+    
 
 class SingleProductView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     search_fields = ['category__title']
     ordering_fields = ['price', 'inventory']
-    def get_permissions(self):
-        permission_classes = []
-
-        if self.request.method != "GET":
-            permission_classes = [IsAuthenticated]
-        
-        return [permission() for permission in permission_classes]
-
+    

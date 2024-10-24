@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # installed lib
-    
     'rest_framework',
-    'webapi',
     'debug_toolbar',
+    # local app
+    'ecomm_api.webapi',
 ]
 
 MIDDLEWARE = [
