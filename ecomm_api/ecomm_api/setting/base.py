@@ -20,13 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ww&b_%!)52rwls#my6_)rc9x%jgu3m#^y3dsn#)646m1*#fdl*'
+SECRET_KEY = 'smk(k^^wr@krk#(puec$r@q2r^mr41&tu@4hmk&z((y9j7)b45'  # changed the key through 
+#  -> from django.core.management.utils import get_random_secret_key
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+# moved allowed host to production.py
 
 # Application definition
 
@@ -75,15 +76,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ecomm_api.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# moved the database to local 
 
 
 # Password validation
@@ -126,7 +119,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 INTERNAL_IPS = [
     '127.0.0.1'
