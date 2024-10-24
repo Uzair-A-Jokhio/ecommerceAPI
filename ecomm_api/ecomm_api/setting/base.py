@@ -11,23 +11,26 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'smk(k^^wr@krk#(puec$r@q2r^mr41&tu@4hmk&z((y9j7)b45'  # changed the key through 
+SECRET_KEY = os.environ.get("SECRET_KEY")  # changed the key through 
 #  -> from django.core.management.utils import get_random_secret_key
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-# moved allowed host to production.py
+# moved allowed_host to production.py
 
 # Application definition
 
@@ -38,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # installed lib
+    
     'rest_framework',
     'webapi',
     'debug_toolbar',
@@ -123,3 +127,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     '127.0.0.1'
 ]
+
+REST_FRAMEWORK = {
+
+}
