@@ -4,7 +4,7 @@ from rest_framework import serializers
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['id', 'name', 'slug']
+        fields = '__all__'
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -12,6 +12,4 @@ class ProductSerializer(serializers.ModelSerializer):
     category = CategorySerializer(read_only=True)
     class Meta:
         model = Product
-        fields = ['id', 'category', 'name', 'slug', 'description', 
-                   'price', 'stock', 'available', 'created_at', 'updated_at']
-
+        fields = '__all__'
