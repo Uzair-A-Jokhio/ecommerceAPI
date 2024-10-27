@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # installed lib
     'rest_framework',
     'debug_toolbar',
+    'drf_spectacular',
     # local app
     'ecomm_api.webapi',
 ]
@@ -129,5 +130,10 @@ INTERNAL_IPS = [
 ]
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS':'drf_spectacular.openapi.AutoSchema',
 
+}
+
+SPECTACULAR_SETTINGS ={
+    'TITLE': 'Django E-Commerce',
 }
